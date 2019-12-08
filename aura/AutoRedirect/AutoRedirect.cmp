@@ -1,0 +1,16 @@
+<!--Name : AutoRedirect -->
+<!--Author : Vinay Vernekar -->
+<!--Date : 8 Dec 2019 -->
+<!--Purpose: Redirect to Account record's website on setting Type field value as "Prospect" -->
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <force:recordData aura:id="recordLoader"
+      recordId="{!v.recordId}"
+      layoutType= "FULL"
+      targetFields="{!v.simpleRecord}"
+      targetError="{!v.recordError}"
+      recordUpdated="{!c.handleRecordUpdated}"
+      />
+</aura:component>
